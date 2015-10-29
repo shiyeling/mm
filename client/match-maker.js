@@ -17,3 +17,8 @@ Router.route("home", {
 		};
 	}
 });
+
+Router.route("login",function(){
+	console.log("Login route ran.");
+	this.render('loginScreen');
+});
