@@ -1,4 +1,3 @@
-div.homeContent {
-	position: relative;
-	top:95px;
+div.mm-home {
+	margin-top: 60px;
 }
