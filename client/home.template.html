@@ -1,8 +1,13 @@
 <template name="home">
 <div class="container mm-home">
-This is user home that should show what he/she might be interested with. This is user home that should show what he/she might be interested with. This is user home that should show what he/she might be interested with.
-<p class="pull-right">And this is just {{d}}</p>
-
-
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation" class="active"><a href="/home?status=pending">Organizing</a> 
+        </li>
+        <li role="presentation"><a href="/home?status=ongoing">Ongoing</a></li>
+        <li role="presentation"><a href="/home?status=closed">Closed</a></li>
+    </ul>
+    <p>
+        <button id="create-match" type="button" class="btn btn-lg btn-primary">Organize A Match</button>
+    </p>
 </div>
 </template>
