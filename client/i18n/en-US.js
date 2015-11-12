@@ -1,3 +1,6 @@
 i18n.map('en-US', {
-	'match.organizer' : 'Match Organizer'
+  'create' : 'Create',
+	'match.organizer' : 'Match Organizer',
+	'match.public' : 'Public Match',
+	'match.private' : 'Private Match'
 });
