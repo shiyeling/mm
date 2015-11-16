@@ -39,11 +39,17 @@
 
 <template name="basicInfo">
 <div class="row">
-    <div class="form-group has-success">
-        <label class="control-label" for="match-name">{{i18n 'match.name'}}</label> <input type="text"
-            class="form-control" id="match-name">
-        <label class="control-label" for="match-date">{{i18n 'match.date'}}</label> <input type="text"
-            class="form-control" id="match-date">
+    <div class="form-group col-md-offset-2 col-md-8 column">
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label" for="match-name">{{i18n 'match.name'}}</label> <input type="text"
+                    class="form-control" id="match-name">
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="match-date">{{i18n 'match.date'}}</label> <input type="text"
+                    class="form-control" id="match-date">
+            </div>
+        </form>
     </div>
 </div>
 </template>
