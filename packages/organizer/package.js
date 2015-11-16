@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
+  api.use('tsega:bootstrap3-datetimepicker', 'client');
   api.use([ 'templating', 'iron:router','anti:i18n','reactive-var' ], 'client');
   api.addFiles([ 'organizer.html', 'organizer.css'], 'client');
   api.addFiles('organizer.js', 'client');

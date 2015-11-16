@@ -9,7 +9,6 @@
     </div>
 </div>
 </template>
-
 <template name="ppSelection">
 <div class="row">
     <div class="col-sm-6 col-md-6">
@@ -36,20 +35,20 @@
     </div>
 </div>
 </template>
-
 <template name="basicInfo">
 <div class="row">
-    <div class="form-group col-md-offset-2 col-md-8 column">
-        <form role="form" class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label" for="match-name">{{i18n 'match.name'}}</label> <input type="text"
-                    class="form-control" id="match-name">
-            </div>
-            <div class="form-group">
-                <label class="control-label" for="match-date">{{i18n 'match.date'}}</label> <input type="text"
-                    class="form-control" id="match-date">
-            </div>
-        </form>
-    </div>
+        <div class="form-group col-md-6">
+            <label class="control-label" for="match-name">{{i18n 'match.name'}}</label> <input type="text"
+                class="form-control" id="match-name">
+        </div>
+        <div class="form-group col-md-6 fg-match-date">
+            <label class="input_label" for="match-date">{{i18n 'match.date'}}</label>
+                <div class="input-group datetimepicker">
+                    <input id="match-date" class="form-control" type="text" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+        </div>
 </div>
 </template>
