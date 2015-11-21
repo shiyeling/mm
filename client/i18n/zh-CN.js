@@ -7,6 +7,15 @@ i18n.map('zh-CN', {
   'match.private' : '内部比赛',
   'match.name':'赛事名称',
   'match.date':'比赛日期',
-  'match.games':'Xiangmu',
+  'match.games': {
+      games:'Games',
+      basketball: {
+          men5:"Mans",
+          women5:"Womens",
+          men3:"Mans 3v3",
+          women3:"Woman 3v3",
+          standShooting: 'Shooting'
+      }
+  },
   'to':"TO"
 });

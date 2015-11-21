@@ -86,6 +86,7 @@ Template.matchSetup.onRendered(function() {
 //        $('div.datetimepicker span.input-group-addon').css('background-color', '#efefef');
 //        $('div.datetimepicker span.input-group-addon').css('border-color', '#ccc');
 //    });
+    customizeCheckbox();
 });
 Template.basicInfo.onRendered(function() {
     var options = {
