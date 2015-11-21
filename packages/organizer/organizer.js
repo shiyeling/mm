@@ -13,7 +13,7 @@ Router.route('organizer', {
         if (t) {
             return {
                 type : this.params.query.t,
-                guideScreens : [ 'ppSelection', 'basicInfo' ],
+                guideScreens : [ 'matchSetup', 'basicInfo' ],
                 configId : null
             }
         }
@@ -37,7 +37,7 @@ Template.organizer.onCreated(function() {
 
 Template.organizer.helpers({
     guideSreen : function() {
-        console.debug('Looking for organizing. Retruning ' + guideScreen.get());
+        console.debug('Looking for organizing. Returning ' + guideScreen.get());
         return guideScreen.get();
     },
     matchConfig : function() {
@@ -53,14 +53,14 @@ Template.organizer.events({
     }
 });
 
-Template.ppSelection.onCreated(function() {
+Template.matchSetup.onCreated(function() {
     console.log("Pri/Pub selection created with data: " + JSON.stringify(this.data));
 });
 
-Template.ppSelection.onDestroyed(function() {
+Template.matchSetup.onDestroyed(function() {
     console.log("Pri/Pub selection destroyed with data: " + JSON.stringify(this.data));
 });
-Template.ppSelection.events({
+Template.matchSetup.events({
     'click .match-config-private ' : function(e, t) {
         this.isPrivate = true;
         console.log("Creating private match config" + JSON.stringify(this));
@@ -73,24 +73,58 @@ Template.ppSelection.events({
     }
 });
 
+Template.matchSetup.onRendered(function() {
+    var options = {
+        format : 'MM-DD-YYYY'
+    };
+    this.$('.datetimepicker').datetimepicker(options);
+//    $('div.datetimepicker input').focus(function() {
+//        $('div.datetimepicker span.input-group-addon').css('background-color', '#ff9900');
+//        $('div.datetimepicker span.input-group-addon').css('border-color', '#ff9900');
+//    });
+//    $('div.datetimepicker input').blur(function() {
+//        $('div.datetimepicker span.input-group-addon').css('background-color', '#efefef');
+//        $('div.datetimepicker span.input-group-addon').css('border-color', '#ccc');
+//    });
+});
 Template.basicInfo.onRendered(function() {
     var options = {
-        format : 'MM-DD-YYYY hh:mm A'
+        format : 'MM-DD-YYYY'
     };
 
     this.$('.datetimepicker').datetimepicker(options);
     var t = $('div.fg-match-date');
-    // var input = t.$('input');
-    // var addon = t.$('span.input-group-addon');
-    // input.focus(function () {
-    // addon.css('background-color', '#ff9900');
-    // addon.css('border-color', '#ff9900');
-    // });
-    //
-    // input.blur(function () {
-    // addon.css('background-color', '#efefef');
-    // addon.css('border-color', '#ccc');
-    // });
+    var input = t.$('input');
+    var addon = t.$('span.input-group-addon');
+    input.focus(function() {
+        addon.css('background-color', '#ff9900');
+        addon.css('border-color', '#ff9900');
+    });
+
+    input.blur(function() {
+        addon.css('background-color', '#efefef');
+        addon.css('border-color', '#ccc');
+    });
+});
+
+Template.basicInfo.onRendered(function() {
+    var options = {
+        format : 'MM-DD-YYYY'
+    };
+
+    this.$('.datetimepicker').datetimepicker(options);
+    var t = $('div.fg-match-date');
+    var input = t.$('input');
+    var addon = t.$('span.input-group-addon');
+    input.focus(function() {
+        addon.css('background-color', '#ff9900');
+        addon.css('border-color', '#ff9900');
+    });
+
+    input.blur(function() {
+        addon.css('background-color', '#efefef');
+        addon.css('border-color', '#ccc');
+    });
 });
 Template.basicInfo.onCreated(function() {
     console.log("Basic Info screen created with data: " + JSON.stringify(this.data));

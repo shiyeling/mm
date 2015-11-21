@@ -7,4 +7,6 @@ i18n.map('zh-CN', {
   'match.private' : '内部比赛',
   'match.name':'赛事名称',
   'match.date':'比赛日期',
+  'match.games':'Xiangmu',
+  'to':"TO"
 });
