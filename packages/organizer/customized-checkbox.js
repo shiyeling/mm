@@ -45,9 +45,7 @@ customizeCheckbox = function() {
 
                   // Initialization
                   function init() {
-
                       updateDisplay();
-
                       // Inject the icon if applicable
                       if ($button.find('.state-icon').length == 0) {
                           $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');

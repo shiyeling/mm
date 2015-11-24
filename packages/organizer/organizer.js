@@ -50,6 +50,12 @@ Template.organizer.events({
         console.log("Captured a nextScreen event.");
         this.guideScreenIndex += 1;
         guideScreen.set(this.guideScreens[this.guideScreenIndex])
+    },
+    'click .finish-match-setup' : function(e, t) {
+        var formInput = $('form.match-setup-form').serializeArray();
+        // do some validation;
+        $('.input-match-name').addClass('has-error');
+        console.log(formInput);
     }
 });
 
@@ -78,15 +84,8 @@ Template.matchSetup.onRendered(function() {
         format : 'MM-DD-YYYY'
     };
     this.$('.datetimepicker').datetimepicker(options);
-//    $('div.datetimepicker input').focus(function() {
-//        $('div.datetimepicker span.input-group-addon').css('background-color', '#ff9900');
-//        $('div.datetimepicker span.input-group-addon').css('border-color', '#ff9900');
-//    });
-//    $('div.datetimepicker input').blur(function() {
-//        $('div.datetimepicker span.input-group-addon').css('background-color', '#efefef');
-//        $('div.datetimepicker span.input-group-addon').css('border-color', '#ccc');
-//    });
     customizeCheckbox();
+    $(".switch").bootstrapSwitch();
 });
 Template.basicInfo.onRendered(function() {
     var options = {

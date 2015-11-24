@@ -1,3 +1,9 @@
 div.mm-content {
 	margin-top: 60px;
 }
+
+span.button-checkbox {
+	position: absolute;
+	right: 10px;
+	top: 2px;
+}

@@ -12,52 +12,80 @@
 </div>
 </template>
 <template name="matchSetup">
-<form class="form-horizontal">
-    <div class="form-group">
+<form class="form-horizontal match-setup-form">
+    <div class="form-group input-match-name">
         <label class="control-label col-sm-2" for="match-name">{{i18n 'match.name'}}</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="match-name"
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="match-name" name="match-name"
                 placeholder="{{i18n 'placeholder.input.match.name'}}">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="match-date-start">{{i18n 'match.date'}}</label>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="input-group datetimepicker">
-                <input id="match-date-start" class="form-control" type="text" />
-                <span class="input-group-addon">
+                <input id="match-date-start" name="match-date-start" class="form-control" type="text" /> <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
         </div>
-        <label class="control-label col-sm-1" for="match-date-end">{{i18n 'to'}}</label>
-        <div class="col-sm-4">
+        <label class="control-label col-sm-1" for="match-date-end">{{i18n 'ui.to'}}</label>
+        <div class="col-sm-3">
             <div class="input-group datetimepicker">
-                <input id="match-date-end" class="form-control" type="text" />
-                <span class="input-group-addon">
+                <input id="match-date-end" name="match-date-end" class="form-control" type="text" /> <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2" for="match-date-start">{{i18n 'match.games.games'}}</label>
-        <div class="col-sm-10">
+        <label class="control-label col-sm-2" for="match-date-start">{{i18n 'match.games.label'}}</label>
+        <div class="col-sm-8">
             <ul class="list-group">
-                <li class="list-group-item">{{i18n 'match.games.basketball.men5'}} <span class="button-checkbox">
-                        <button type="button" class="btn" data-color="primary">Default</button>
-                        <input type="checkbox" class="hidden" checked />
-                    </span>
+                <li class="list-group-item">{{i18n 'match.games.basketball.men5'}} <span
+                    class="button-checkbox pull-right">
+                        <button type="button" class="btn" data-color="primary"></button> <input type="checkbox" name="basketball-men5"
+                        class="hidden" checked />
+                </span>
                 </li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">{{i18n 'match.games.basketball.women5'}}<span
+                    class="button-checkbox pull-right">
+                        <button type="button" class="btn" data-color="primary"></button> <input type="checkbox" name="basketball-women5"
+                        class="hidden" />
+                </span></li>
+                <li class="list-group-item">{{i18n 'match.games.basketball.men3'}} <span
+                    class="button-checkbox pull-right">
+                        <button type="button" class="btn" data-color="primary"></button> <input type="checkbox" name="basketball-men3"
+                        class="hidden" />
+                </span></li>
+                <li class="list-group-item">{{i18n 'match.games.basketball.women3'}} <span
+                    class="button-checkbox pull-right">
+                        <button type="button" class="btn" data-color="primary"></button> <input type="checkbox" name="basketball-women3"
+                        class="hidden" />
+                </span></li>
+                <li class="list-group-item">{{i18n 'match.games.basketball.freeShooting'}} <span
+                    class="button-checkbox pull-right">
+                        <button type="button" class="btn" data-color="primary"></button> <input type="checkbox" name="basketball-freeShooting"
+                        class="hidden" />
+                </span></li>
             </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="match-date-start"> {{i18n 'match.private'}}</label>
+        <div class="btn-group col-sm-8">
+            <input type="checkbox" class="switch" name="privateMatch" checked>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="btn-group col-sm-2 col-sm-offset-8">
+            <button type="button" class="btn btn-default finish-match-setup">{{i18n 'match.create'}}</button>
         </div>
     </div>
 </form>
 </template>
+
+
 <template name="basicInfo">
 <div class="row">
     <div class="form-group col-xs-12 col-md-6 col-lg-5 ">
@@ -67,9 +95,8 @@
     <div class="form-group col-xs-12 col-md-6 col-lg-5 fg-match-date">
         <label class="input_label" for="match-date">{{i18n 'match.date'}}</label>
         <div class="input-group datetimepicker">
-            <input id="match-date" class="form-control" type="text" />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
+            <input id="match-date" class="form-control" type="text" /> <span class="input-group-addon"> <span
+                class="glyphicon glyphicon-calendar"></span>
             </span>
         </div>
     </div>
